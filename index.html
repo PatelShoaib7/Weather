@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body{
+        background-image: url("https://image.shutterstock.com/image-vector/futuristic-virtual-graphic-touch-user-600w-660652282.jpg");
+      }
+      
+       /* #body{
+          display: grid;
+          grid-template-columns: repeat(1,2fr);
+          grid-template-columns: auto;
+          border: 1px solid black;
+       } */
+/*        
+*{
+ margin: 0;
+ padding: 0;
+}
+
+html{
+    width: 100vw;
+    height: 100vh;
+}
+
+/* CSS which you need for blurred box */
+/* body{
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+ background-size: cover;
+ background-position: top;
+ background-image:url(http://bit.ly/2gPLxZ4);
+ width: 95%;
+ height: 70%;
+  font-family: Arial, Helvetica; 
+  letter-spacing: 0.03em; 
+  font-weight: 400;
+ -webkit-font-smoothing: antialiased; 
+} */
+/* 
+.blurred-box{
+  position: relative;
+    width: 250px;  
+  height: 350px;
+  top: calc(50% - 175px);
+  left: calc(50% - 125px);
+  background: inherit;
+  border-radius: 2px;
+  overflow: hidden;
+} */
+/* 
+.blurred-box:after{
+ content: '';
+ width: 300px;
+ height: 300px;
+ background: inherit; 
+ position: absolute;
+ left: -25px;
+ left position
+ right: 0;
+ top: -25px;  
+ top position 
+ bottom: 0;
+ box-shadow: inset 0 0 0 200px rgba(255,255,255,0.05);
+ filter: blur(10px);
+}  */
+
+
+/* Form which you dont need */
+/* .user-login-box{
+  position: relative;
+  margin-top: 50px;
+  text-align: center;
+  z-index: 1;
+}
+.user-login-box > *{
+  display: inline-block;
+  width: 200px;
+}
+
+.user-icon{
+  width: 100px;
+  height: 100px;
+  position: relative;
+  border-radius: 50%;
+  background-size: contain;
+  background-image: url(https://pbs.twimg.com/profile_images/725321660484583424/ArQ4fM3k.jpg);
+}
+
+.user-name{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: white;
+}
+
+input.user-password{
+  width: 120px;
+  height: 18px;
+  opacity: 0.4;
+  border-radius: 2px;
+  padding: 5px 15px;
+  border: 0;
+} */
+
+      
+   
+   #city{
+       border: 2px solid black;
+    
+       height: 25px;
+       border-radius: 15px;
+       text-align: center;
+   }
+   #btn{
+    
+        height: 25px;
+      
+       border-radius: 10px;
+       text-align: center;
+     
+       background-color:rgb(239,237,237);
+       border: 2px solid black;
+       margin-top: 5px;
+      
+      
+   }
+   #all{
+   
+     display:flex;
+     margin-right: 60px;
+     width: 80%;
+     margin: auto;
+     background-image: url("https://image.shutterstock.com/image-vector/abstract-world-map-triangle-geometry-260nw-1795220776.jpg");
+   
+     
+   }
+ 
+   #main > div {
+          border: 1px solid black;
+         width: 40%;
+        
+         margin-top:30px;
+         background-color:darkslategray;
+        
+         padding: 10px;
+         display: flex;
+        justify-content: space-evenly;
+        
+         border-radius: 12px;
+         height: 40px;
+         margin: auto;
+         border:3px solid powderblue;
+
+   }
+
+   #container > div :hover{
+    background-color: powderblue;
+  transition: background-color .5s;
+   }
+
+   #container > div{
+        font-family: sans-serif;
+        color:black;
+    
+        margin-left:px ;
+        width: 130%;
+        display: grid;
+       grid-template-columns: repeat(1,2fr);
+       grid-template-rows: auto;
+       height: 20px;
+       padding: 5px;
+       justify-content: center;
+      
+       text-align: justify;
+       margin-left: 30px;
+       background-color:rgb(219,219,219);
+       border-radius: 10px;
+       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+       margin-top: 20px;
+       margin-bottom: 15px;
+       margin-left: 100px;
+    }
+    #container + div{
+      margin-left: 290px;
+    
+    
+    }
+
+    #container2{
+      display: grid;
+      grid-template-columns: repeat(8,3fr);
+      grid-template-rows: 300px;
+    
+      width: 98%;
+      margin: auto;
+      background-color: black;
+      background-image: url("");
+    }
+    #img{
+      height: 120%;
+      
+      margin-top: 50px;
+      border:2.5px solid royalblue;
+     
+    }
+
+    #div{
+
+      widows: 98%;
+      margin: auto;
+      color: white;
+      font-family: sans-serif;
+      line-height: 20px;
+     
+    }
+  
+    @Media only screen and (min-width:0px) and (max-width:500px)
+    {
+
+
+      #container > div{
+
+        grid-template-columns: repeat(1,3fr);
+        grid-template-rows: 100px;
+        width: 70%;
+      
+      }
+      #main > div {
+        width: 70%;
+      }
+      
+    }   
+  
+    </style>
+</head>
+<body id="body">
+   <div id="main">
+           <div>
+                     <input id="city" type="text" placeholder="Enter City">
+                     <button id="btn"  onclick="getwetherdata()">Check Wether</button>
+          </div>
+</div>
+<div id="all">
+
+
+<div id="container">
+          <div id="a">City Name :</div>
+          <div id="b">Max temp :</div>
+          <div id="c">Min temp :</div>
+          <div id="d">Wind-speed Km/hr :</div>
+          <div id="e">Pressure Kg/cm.sq :</div>
+          <div id="f">Clounds</div>
+          <div id="g">Sunrise</div>
+          <div id="h">Sunset</div>
+      
+</div>
+<div id="img"></div>
+</div>
+
+     
+<div id="container2">
+  
+
+</div>
+
+
+   
+</body>
+</html>
+<script>
+
+let key="c85e6c535afb5d9e8ca5b4c7b17c58c4";
+
+async function getwetherdata()
+{
+try {
+
+    let city = document.getElementById("city").value //acccpting the data
+  
+    let res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`); //preparing the link ready
+
+   let data = await res.json();
+   //acts like a bucket to collect all the data comnig from the link
+            
+   console.log(data)
+   append_data(data)
+
+
+   let url2 = `https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord.lat}&lon=${data.coord.lon}&exclude=current,hourly,minutely&appid=c501beb11c65204a30ed21ffa0d577ce&units=metric`;
+      let res2 = await fetch(url2);
+      
+      let data2 = await res2.json();
+
+      console.log("data2:", data2);
+  
+  
+   Data2(data2)
+
+
+}
+catch (err)
+{
+    console.log(err)
+}
+}
+
+  function append_data(data)
+  
+  {
+            
+                  let all = document.getElementById("all")
+      
+                let div = document.getElementById("container")
+          
+                let div_a= document.getElementById("a")
+                    div_a.innerHTML= "City Name : "+data.name;
+                  
+                  let max = document.getElementById("b")
+                  max.innerHTML=  "Max temp : "+data.main.temp_max
+                    
+                  let mix = document.getElementById("c")
+                    mix.innerHTML=  "Min temp : "+data.main.temp_min
+                
+                  let speed = document.getElementById("d")
+                  speed.innerHTML=  "Wind-Speed Km/hr : "+data.wind.speed
+                
+                let pressure = document.getElementById("e")
+                pressure.innerHTML="Pressure kg/cm.sq: "+data.main.pressure
+                
+                let cloud = document.getElementById("f")
+                      cloud.innerHTML=  "Clounds : "+data.clouds.all
+                
+                let rise = document.getElementById("g")
+                  rise.innerHTML=  "Sunrise : "+data.sys.sunrise
+
+                let set = document.getElementById("h")
+                  set.innerHTML=  "Sunrise : "+data.sys.sunset
+
+                  let img = document.getElementById("img")
+              
+                let iframe =  document.createElement("iframe");
+                iframe.height = "250px";
+                iframe.width = "300px";
+                iframe.src = `https://maps.google.com/maps?q=${data.name}&t=&z=13&ie=UTF8&iwloc=&output=embed`
+                img.append(iframe);
+              
+                div.append(div_a,max,mix,speed,pressure,cloud,rise,set)
+              
+  
+  }
+
+    function Data2(data2) {
+    
+    document.getElementById("container2").innerHTML=null;
+   
+    data2.daily.forEach(function (elem, index) 
+    {
+      var div = document.createElement("div");
+      div.setAttribute("id", "div");
+
+      var days = document.createElement("h3");
+      days.innerText = `${elem.dt}`;
+
+       console.log("days:", days.innerText);
+
+       var icon = document.createElement("img");
+       icon.src = `http://openweathermap.org/img/wn/${elem.weather[0].icon}@2x.png`;
+       console.log("icon:", icon);
+
+       var day = document.createElement("h3");
+       day.innerText = `Day: ${elem.temp.day}°C`;
+
+       var  night = document.createElement("h4");
+       night.innerText = `Night: ${elem.temp.night.toFixed(0)}°C`;
+
+       div.append(days,icon,day,night);
+
+      document.getElementById("container2").append(div);
+    });
+  }
+ 
+
+
+
+
+
+</script>

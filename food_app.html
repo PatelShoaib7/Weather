@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #img{
+            height: 300px;
+            width: 350px;
+        }
+        #parent{
+            display: grid;
+            grid-template-columns: repeat(4,3fr);
+          
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div>
+                  <input id="city" type="text" placeholder="Enter City">
+                  <button id="btn"  onclick="getwetherdata()">Check Wether</button>
+       </div>
+</div>
+<h1></h1>
+</div>
+
+  
+<div id="parent"> </div>
+</body>
+</html>
+<script>
+
+
+
+  
+
+async function getwetherdata()
+{
+try {
+      
+    let key="https://www.themealdb.com/api.php?ref=apilist.fun";
+
+    let city = document.getElementById("city").value //acccpting the data
+  
+    let res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${city}&appid=${key}`); //preparing the link ready
+
+   let data = await res.json();
+   //acts like a bucket to collect all the data comnig from the link
+            
+   console.log(data)
+
+   let done = data.meals
+
+   append_data(done)
+
+
+
+}
+catch (err)
+{
+    console.log(err)
+}
+}
+//my api key ="https://www.themealdb.com/api.php?ref=apilist.fun "
+
+
+function append_data(data)
+       
+ {
+     
+let parent = document.getElementById("parent");
+ parent.innerHTML=null;
+
+     data.forEach ((elem)=> {
+  
+
+                let div = document.createElement("div")
+
+                let t = document.createElement("div")
+                t.innerHTML=elem.strMeal;
+
+            // let img  = document.createElement("img")
+            // img.src=elem.image
+            
+
+            let pr = document.createElement("p")
+            pr.innerHTML=elem.strIngredient1;
+
+            let img  = document.createElement("img")
+            img.src=elem.strMealThumb;
+            img.setAttribute("id","img")
+            
+          
+
+div.append(img,t,pr)
+parent.append(div)
+
+
+         
+     });
+         
+   
+
+
+               
+            
+
+  }
+
+
+</script>
